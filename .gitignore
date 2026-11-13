@@ -5,14 +5,19 @@
 !*/cache/index.html
 !*/cache/.htaccess
 
-user_guide_src/build/*
-user_guide_src/cilexer/build/*
-user_guide_src/cilexer/dist/*
-user_guide_src/cilexer/pycilexer.egg-info/*
-
-#codeigniter 3
-!application/logs/index.html
-!application/logs/.htaccess
 /vendor/
-application/config/database.php
-application/config/config.php
+
+# CodeIgniter 4
+.env
+!env.example
+writable/cache/*
+!writable/cache/index.html
+writable/logs/*
+!writable/logs/index.html
+writable/session/*
+!writable/session/index.html
+writable/uploads/*
+!writable/uploads/index.html
+phpunit*.xml
+.phpunit.result.cache
+build/.phpunit.cache

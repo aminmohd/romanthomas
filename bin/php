@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Project PHP CLI: always /opt/php-8.5.12 with project php-8512.ini (intl, etc.).
+set -euo pipefail
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+export PHPRC="${ROOT}/config/php-8512.ini"
+exec /opt/php-8.5.12/bin/php "$@"

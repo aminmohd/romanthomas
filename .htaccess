@@ -1,3 +1,7 @@
+<FilesMatch "^(\.env|\.env\..+)$">
+   Require all denied
+</FilesMatch>
+
 <Files "./adminer.php">
    AuthName "restricted area"
    AuthType Basic
@@ -7,6 +11,7 @@
 RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php/$1 [L]
+
+# CodeIgniter 4 (document root should prefer public/ in production)
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ public/$1 [L]

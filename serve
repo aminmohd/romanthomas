@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Dev server for CI4 on PHP 8.5.12 (project-only).
+set -euo pipefail
+ROOT="$(cd "$(dirname "$0")" && pwd)"
+export PHPRC="${ROOT}/config/php-8512.ini"
+HOST="${1:-localhost}"
+PORT="${2:-8085}"
+exec /opt/php-8.5.12/bin/php -S "${HOST}:${PORT}" -t "${ROOT}/public" "${ROOT}/public/router.php"

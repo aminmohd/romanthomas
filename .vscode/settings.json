@@ -1,0 +1,6 @@
+{
+  "php.validate.executablePath": "/opt/php-8.5.12/bin/php",
+  "terminal.integrated.env.linux": {
+    "PHPRC": "${workspaceFolder}/config/php-8512.ini"
+  }
+}
